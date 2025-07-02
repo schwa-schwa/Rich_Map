@@ -1,0 +1,189 @@
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+/* スクリーン全体 */
+.screen {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ヘッダー */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.spacer {
+  width: 24px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.user-icon-link {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+/* 背景画像 */
+.bg-image {
+  width: 100%;
+  height: 220px;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ボタンパネル */
+.button-panel {
+  padding: 16px;
+  margin-top: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #fff;
+  position: relative;
+  top: -40px;
+}
+
+.panel-button {
+  padding: 14px;
+  background-color: #ffffffee;
+  border: 2px solid #d0d0d0;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* クーポン枠 */
+.coupon-box {
+  margin: 16px;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coupon-card {
+  width: 60%;
+  height: 80px;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.survey-link {
+  text-decoration: none;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+/* 既存のCSSはそのままでOK */
+
+/* ▼ モバイルメニュー */
+.mobile-menu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.mobile-menu a {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.mobile-menu a:hover {
+  background-color: #f9f9f9;
+}
+
+/* 表示切り替え */
+.mobile-menu.active {
+  display: flex;
+}
+
+/* ▼ クーポンカードをリンク風に */
+.coupon-card {
+  width: 60%;
+  height: 80px;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}

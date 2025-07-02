@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="screen bg-image">
+    <!-- ハンバーガーメニューとヘッダー -->
+    <div class="header">
+      <span class="menu-icon" id="menuBtn">☰</span>
+      <h1>HOME</h1>
+      <a href="user.html" class="user-icon-link" title="マイページ">
+        <img src="../img/user-icon.png" alt="ユーザー" class="user-icon">
+      </a>
+    </div>
+
+    <!-- モバイルメニュー（スライド式） -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="search.html">スポット検索</a>
+      <a href="share.html">体験シェア</a>
+      <a href="stamp.html">チェックイン</a>
+      <a href="survey.html">アンケート</a>
+      <a href="coupon.html">クーポン</a>
+    </div>
+
+
+    <!-- パネルボタン -->
+    <div class="button-panel">
+      <a href="search.html" class="panel-button">スポット検索</a>
+      <a href="share.html" class="panel-button">体験・シェア</a>
+      <a href="stamp.html" class="panel-button">チェックイン & スタンプラリー</a>
+    </div>
+
+    <!-- クーポンとアンケート -->
+    <div class="coupon-box">
+      <a href="coupon.html" class="coupon-card">クーポン</a>
+      <a href="survey.html" class="survey-link">アンケート</a>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
