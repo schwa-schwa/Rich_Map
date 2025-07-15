@@ -187,3 +187,32 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* 検索アイコン */
+.search-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ユーザーメニュー一覧 */
+.user-menu {
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.user-menu-item:last-child {
+  border-bottom: none;
+}
