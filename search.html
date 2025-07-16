@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スポット検索</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="header">
+      <div class="menu-icon" id="menu-toggle">☰</div>
+      <h1>スポット検索</h1>
+      <a href="user.html" class="user-icon-link">
+        <img src="./img/user-icon.png" alt="ユーザー" class="user-icon" />
+      </a>
+    </header>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">ホーム</a>
+      <a href="share.html">体験シェア</a>
+      <a href="stamp.html">チェックイン</a>
+      <a href="coupon.html">クーポン</a>
+      <a href="survey.html">アンケート</a>
+    </div>
+
+    <div class="search-container">
+      <input type="text" placeholder="スポット名で検索" class="search-input" />
+      <button class="search-button">検索</button>
+    </div>
+
+    <!-- マップ -->
+    <div id="map"></div>
+
+    <!-- スポット一覧 -->
+    <div class="spot-list" id="spot-list"></div>
+  </div>
+
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // ハンバーガーメニュー
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+    });
+
+    // Leaflet マップ初期化（青森市）
+    const map = L.map("map").setView([40.8246, 140.7400], 14);
+
+    // Googleマップ風のタイル（CartoDB）
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+    }).addTo(map);
+
+    // スポット情報
+    const spots = [
+      {
+        name: "青森駅",
+        description: "JR青森駅。観光の出発点。",
+        lat: 40.8251,
+        lng: 140.7402,
+      },
+      {
+        name: "ねぶたの家 ワ・ラッセ",
+        description: "ねぶた祭りを体感できるミュージアム。",
+        lat: 40.8301,
+        lng: 140.7399,
+      },
+    ];
+
+    // スポットをマップとリストに追加
+    const spotList = document.getElementById("spot-list");
+
+    spots.forEach((spot) => {
+      // マーカー
+      L.marker([spot.lat, spot.lng]).addTo(map).bindPopup(`<strong>${spot.name}</strong><br>${spot.description}`);
+
+      // リスト表示
+      const spotItem = document.createElement("div");
+      spotItem.className = "spot-item";
+      spotItem.innerHTML = `
+        <h3>${spot.name}</h3>
+        <p>${spot.description}</p>
+      `;
+      spotList.appendChild(spotItem);
+    });
+  </script>
+</body>
+</html>
