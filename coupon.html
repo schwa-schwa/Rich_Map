@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>クーポンページ</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="screen bg-image">
+        <header class="header">
+            <div class="menu-icon" id="menu-toggle">☰</div>
+            <h1>クーポン</h1>
+            <a href="user.html" class="user-icon-link">
+                <img src="img/user-icon.png" alt="ユーザー" class="user-icon" />
+            </a>
+        </header>
+
+        <nav id="mobile-menu" class="mobile-menu">
+            <a href="index.html">ホーム</a>
+            <a href="coupon.html">クーポン</a>
+            <a href="search.html">スポット検索</a>
+            <a href="share.html">体験一覧</a>
+            <a href="user.html">マイページ</a>
+        </nav>
+
+        <main class="screen">
+            <div class="coupon-box">
+                <div class="coupon-card">
+                    <p>飲食店で使える10%OFFクーポン</p>
+                </div>
+                <button id="show-coupon" class="survey-link">クーポンを見る</button>
+            </div>
+
+            <div id="coupon-code" class="coupon-box" style="display: none;">
+                <p style="font-size: 18px; text-align: center;">クーポンコード：<strong>FOOD10</strong></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // クーポンコードの表示
+        document.addEventListener("DOMContentLoaded", function () {
+            const showCouponBtn = document.getElementById("show-coupon");
+            const couponCode = document.getElementById("coupon-code");
+
+            if (showCouponBtn && couponCode) {
+                showCouponBtn.addEventListener("click", () => {
+                    couponCode.style.display = "block";
+                    showCouponBtn.style.display = "none";
+                });
+            }
+
+            // ハンバーガーメニュー
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("active");
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

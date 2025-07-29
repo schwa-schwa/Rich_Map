@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スタンプラリー</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* スタンプラリーページ専用CSS */
+
+    .stamp-container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .stamp-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .stamp {
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      border: 2px dashed #aaa;
+      border-radius: 10px;
+      background-color: #fdfdfd;
+      color: #555;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .stamp.collected {
+      background-color: #dff0d8;
+      border-color: #5cb85c;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    .stamp-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    /* 送信ボタン */
+    .stamp-submit {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .stamp-submit:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="screen">
+    <header class="header">
+      <div class="menu-icon" id="menu-toggle">☰</div>
+      <h1>スタンプラリー</h1>
+      <a href="user.html" class="user-icon-link">
+        <img src="img/user-icon.png" alt="ユーザー" class="user-icon" />
+      </a>
+    </header>
+
+    <nav class="mobile-menu" id="mobile-menu">
+      <a href="index.html">ホーム</a>
+      <a href="search.html">スポット検索</a>
+      <a href="coupon.html">クーポン</a>
+      <a href="share.html">体験一覧</a>
+      <a href="survey.html">アンケート</a>
+    </nav>
+
+    <main class="stamp-container">
+      <div class="stamp-title">獲得スタンプ</div>
+      <div class="stamp-list">
+        <div class="stamp collected">弘前城</div>
+        <div class="stamp">ねぶた会館</div>
+        <div class="stamp">三内丸山遺跡</div>
+        <div class="stamp">十和田湖</div>
+        <div class="stamp">青森駅</div>
+        <div class="stamp">八甲田山</div>
+      </div>
+
+      <button class="stamp-submit">スタンプを送信</button>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>体験一覧</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .screen {
+      position: relative;
+      min-height: 100vh;
+      padding-bottom: 80px; /* ボタン分の余白 */
+    }
+
+    .experience-list {
+      padding: 16px;
+      margin-top: 80px;
+    }
+
+    .experience-item {
+      background-color: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 16px;
+    }
+
+    .experience-item h2 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .experience-item p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .post-button-container {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+
+    .post-button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      font-size: 32px;
+      text-align: center;
+      line-height: 56px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .post-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen">
+
+    <!-- ヘッダー -->
+    <div class="header">
+      <span class="menu-icon" id="menuBtn">☰</span>
+      <h1>体験一覧</h1>
+      <a href="user.html" class="user-icon-link" title="マイページ">
+        <img src="img/user-icon.png" alt="ユーザー" class="user-icon">
+      </a>
+    </div>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">ホーム</a>
+      <a href="search.html">スポット検索</a>
+      <a href="share.html">体験一覧</a>
+      <a href="stamp.html">スタンプ</a>
+      <a href="coupon.html">クーポン</a>
+      <a href="survey.html">アンケート</a>
+      <a href="user.html">マイページ</a>
+    </div>
+
+    <!-- 体験一覧（新潟） -->
+    <div class="experience-list">
+      <div class="experience-item">
+        <h2>越後湯沢温泉</h2>
+        <p>雪見風呂が最高！冬の新潟でゆったりと温まれる贅沢な時間を満喫しました。</p>
+      </div>
+
+      <div class="experience-item">
+        <h2>佐渡金山ツアー</h2>
+        <p>歴史を感じる坑道と、ガイドさんの丁寧な説明がとても印象的でした。</p>
+      </div>
+    </div>
+
+    <!-- 投稿ボタン（screen内） -->
+    <div class="post-button-container">
+      <a href="share_post.html" class="post-button" title="体験を投稿">＋</a>
+    </div>
+
+  </div> <!-- /.screen -->
+
+  <!-- JavaScript -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

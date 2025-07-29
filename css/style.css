@@ -299,3 +299,55 @@ body {
   font-size: 14px;
   margin: 0;
 }
+
+/* クーポン表示用のカード */
+.coupon-box {
+  margin: 16px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coupon-card {
+  padding: 16px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* クーポン表示ボタン */
+#show-coupon {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+#show-coupon:hover {
+  background-color: #218838;
+}
+
+/* クーポンコード表示部分 */
+#coupon-code {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>体験投稿</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .form-container {
+      padding: 20px;
+      margin-top: 80px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .submit-button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen">
+
+    <!-- ヘッダー -->
+    <div class="header">
+      <span class="menu-icon" id="menuBtn">☰</span>
+      <h1>体験投稿</h1>
+      <a href="user.html" class="user-icon-link" title="マイページ">
+        <img src="img/user-icon.png" alt="ユーザー" class="user-icon">
+      </a>
+    </div>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">ホーム</a>
+      <a href="search.html">スポット検索</a>
+      <a href="share.html">体験一覧</a>
+      <a href="stamp.html">スタンプ</a>
+      <a href="coupon.html">クーポン</a>
+      <a href="survey.html">アンケート</a>
+      <a href="user.html">マイページ</a>
+    </div>
+
+    <!-- 投稿フォーム -->
+    <div class="form-container">
+      <form id="experienceForm">
+        <label for="title">タイトル</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">体験内容</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <button type="submit" class="submit-button">投稿する</button>
+        <div id="successMessage" class="success-message" style="display: none;">投稿が完了しました！</div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // ハンバーガーメニュー
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    // 投稿フォーム処理
+    const form = document.getElementById('experienceForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const title = document.getElementById('title').value.trim();
+      const description = document.getElementById('description').value.trim();
+
+      if (title && description) {
+        // 仮の投稿処理
+        console.log("投稿タイトル:", title);
+        console.log("投稿内容:", description);
+
+        successMessage.style.display = 'block';
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
+

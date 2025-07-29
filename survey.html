@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>アンケート</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* --- アンケートフォーム専用スタイル --- */
+    main {
+      padding: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    form label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    form select,
+    form textarea {
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    form button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    form button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="screen">
+    <header class="header">
+      <div class="menu-icon" id="menu-toggle">☰</div>
+      <h1>アンケート</h1>
+      <a href="user.html" class="user-icon-link">
+        <img src="img/user-icon.png" alt="ユーザー" class="user-icon" />
+      </a>
+    </header>
+
+    <nav class="mobile-menu" id="mobile-menu">
+      <a href="index.html">ホーム</a>
+      <a href="search.html">スポット検索</a>
+      <a href="coupon.html">クーポン</a>
+      <a href="share.html">体験一覧</a>
+      <a href="stamp.html">スタンプ</a>
+    </nav>
+
+    <main style="padding: 20px;">
+      <form>
+        <label>旅の満足度（5段階）:<br>
+          <select name="rating">
+            <option>5 - とても満足</option>
+            <option>4 - 満足</option>
+            <option>3 - 普通</option>
+            <option>2 - 不満</option>
+            <option>1 - とても不満</option>
+          </select>
+        </label><br><br>
+        <label>ご意見:<br>
+          <textarea name="feedback" rows="4"></textarea>
+        </label><br><br>
+        <button type="submit">送信</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
